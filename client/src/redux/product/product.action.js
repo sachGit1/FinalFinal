@@ -13,7 +13,7 @@ export const getAllProduct = (_id) => async (dispatch) => {
     dispatch(productRequest());
     const productData = await axios({
       method: "GET",
-      url: `https://tiffin-managment.onrender.com/api/v1/product/provider/${_id}`,
+      url: `https://localhost:4000/api/v1/product/provider/${_id}`,
     });
     return dispatch(productSuccess(productData.data));
   } catch (error) {
@@ -25,7 +25,7 @@ export const getProductById = (_id) => async (dispatch) => {
     dispatch(productRequest());
     const product = await axios({
       method: "GET",
-      url: ` https://tiffin-managment.onrender.com/api/v1/product/${_id}`,
+      url: ` https://localhost:4000/api/v1/product/${_id}`,
     });
     return dispatch(getProductByIdSuccess(product.data));
   } catch (error) {
@@ -37,7 +37,7 @@ export const addProduct = (data) => async (dispatch) => {
     dispatch(productRequest());
     const product = await axios({
       method: "POST",
-      url: "https://tiffin-managment.onrender.com/api/v1/product",
+      url: "https://localhost:4000/api/v1/product",
       data,
     });
     return dispatch(addProductSuccess(product.data));
@@ -50,7 +50,7 @@ export const deleteProduct = (_id) => async (dispatch) => {
     dispatch(productRequest());
     await axios({
       method: "DELETE",
-      url: `https://tiffin-managment.onrender.com/api/v1/product/${_id}`,
+      url: `https://localhost:4000/api/v1/product/${_id}`,
     });
     dispatch(deleteProductSuccess(_id));
   } catch (error) {

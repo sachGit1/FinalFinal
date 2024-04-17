@@ -42,7 +42,7 @@ function OrdersPage() {
         </Typography>
     ];
     const handleCancel = (order) => {
-        dispatch(updateUserOrder({ _id: order._id, status: "Cancelled", user: order.user, provider: order.provider, food: order.food, quantity: order.quantity }))
+        dispatch(updateUserOrder({ _id: order._id, status: "Cancelled", user: order.user, provider: order.provider, product: order.product, quantity: order.quantity }))
     }
     return (
         <div className='md:px-8 px-1 py-4'>
@@ -53,11 +53,11 @@ function OrdersPage() {
                 {orders.map((order, idx) => (
                     <div className='md:flex gap-2 border-b py-2' key={idx}>
                         <div className='w-32 h-28 overflow-hidden'>
-                            <img src={order?.food?.image} alt="" />
+                            <img src={order?.product?.image} alt="" />
                         </div>
                         <div className='flex justify-between items-center'>
                             <div>
-                                <p>Name: <span className='font-semibold'>{order?.food?.name}</span></p>
+                                <p>Name: <span className='font-semibold'>{order?.product?.name}</span></p>
                                 <p>Quantity : <span className='font-semibold'>{order?.quantity}</span></p>
                                 <p>Price : <span className='font-semibold'>₹{order?.totalAmount}</span></p>
                                 <p>OrderStatus: <span className='font-semibold'>{order?.orderStatus}</span></p>

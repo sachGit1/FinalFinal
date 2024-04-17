@@ -1,0 +1,97 @@
+const orderModel = require('../models/order')
+const productModel =require('../models/product')
+const {sendEmail} = require('../utils/sendEmail')
+exports.addOrder = async(req,res) =>{
+    try {
+        const user = req.user._id;
+        if(!user)
+            return res.status(400).json({message:"Please Login to make orders"});
+        const data = req.body;
+        const obj = {user,...data}
+        const order = await orderModel.create(obj);
+        const product = await productModel.findById(data.product)
+        const quantity = product.quantity - data.quantity
+        await productModel.findByIdAndUpdate(product._id,{$set:{quantity}})
+        const subject = "Ordered: Your Order is Successfull"
+        const message = `Hi ${req.user.name} \n Your Order for ${product.name} is Successfull \n Thank You`
+        const email = req.user.email
+
+        await sendEmail({email,subject,message});
+        return res.status(200).json({order});
+    } catch (error) {
+        return res.status(500).json({message:error.message});
+    }
+}
+exports.getUserOrders = async(req,res) =>{
+    try {
+        const user = req.user._id;
+        if(!user)
+            return res.status(400).json({message:"Please Login to fetch orders"});
+        
+        const orders = await orderModel.find({user}).populate("tailor")
+        if(!orders)
+            return res.status(404).json({message:"No orders Found"});
+        
+        return res.status(200).json({orders});
+    } catch (error) {
+        return res.status(500).json({message:error.message});
+    }
+}
+exports.getProvidersOrders = async(req,res) =>{
+    try {
+        const provider = req.provider._id;
+        if(!provider)
+            return res.status(400).json({message:"Please Login to fetch orders"});
+        
+        const orders = await orderModel.find({provider}).populate("user products").sort({createdAt:-1})
+
+        if(!orders)
+            return res.status(404).json({message:"No orders Found"});
+        
+        return res.status(200).json({orders});
+    } catch (error) {
+        return res.status(500).json({message:error.message});
+    }
+}
+exports.deleteOrder = async(req,res)=>{
+    try {
+        const {_id} = req.params;
+        if(!_id)
+            return res.status(404).json({message:"Invalid Request"});
+        
+        await orderModel.findByIdAndDelete(_id);
+
+        return res.status(200).json({message:"Order Deleted Successfully"});
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+    }
+}
+exports.updateOrderStatus = async(req,res) =>{
+    try {
+        const status = req.body.status
+        const id = req.body._id
+        let subject,message,email;
+        
+        if(status === "Delivered"){     
+            subject = "Delivered: Your Order is Delivered Successfully"
+            message = `Hi ${req.body.user.name} \n Your Order for ${req.body.product.name} has been delivered \n Thank You`
+            email = req.body.user.email
+        }else{
+            subject = "Cancelled: Order has been Cancelled"
+            message = `Hi ${req.body.provider.name} Your Order for ${req.body.product.name} has been Cancelled by ${req.body.user.name}`
+            email = req.body.provider.email
+            const quantity = req.body.product.quantity + req.body.quantity
+            await productModel.findByIdAndUpdate(req.body.product._id,{$set:{quantity}})
+        }
+        // await sendEmail({email,subject,message});
+
+        if(!id)
+            return res.status(400).json({message:"No Orders Found"})
+        
+        const updatedOrder = await orderModel.findByIdAndUpdate(id,{orderStatus:status},{new:true}).populate("user products")
+
+        return res.status(200).json({updatedOrder})
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+    }
+}

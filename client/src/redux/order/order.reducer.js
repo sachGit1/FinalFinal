@@ -14,7 +14,7 @@ const updateOrders = (orders, updatedOrder) => {
 };
 
 const orderSlice = createSlice({
-  name: "Foods",
+  name: "Products",
   initialState,
   reducers: {
     orderRequest: (state) => {

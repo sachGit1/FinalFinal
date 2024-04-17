@@ -78,7 +78,7 @@ export default function AddProductModal({ open, setOpen }) {
     form.append("description", description)
     form.append("isVeg", veg)
     form.append("quantity", quantity)
-    form.append("foodImage", image)
+    form.append("productImage", image)
 
     dispatch(addProduct(form));
     setOpen(false);

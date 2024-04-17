@@ -166,7 +166,7 @@ export default function OrderTable() {
                   </StyledTableCell>
                   <StyledTableCell align='center'>{order?.date}</StyledTableCell>
                   <StyledTableCell align='center'>{order?.user?.name}</StyledTableCell>
-                  <StyledTableCell align='center'>{!order?.food?'Food Deleted':order.food.name}</StyledTableCell>
+                  <StyledTableCell align='center'>{!order?.product?'Product Deleted':order.product.name}</StyledTableCell>
                   <StyledTableCell align='center'>{order?.quantity}</StyledTableCell>
                   <StyledTableCell align='center'>₹{order?.totalAmount}</StyledTableCell>
                   <StyledTableCell align='center'>{order?.address}</StyledTableCell>
