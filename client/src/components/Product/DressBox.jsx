@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Skeleton from '../Skeleton';
 
-function ProductBox({ products }) {
+function DressBox({ products }) {
     const [loading, setLoading] = useState(true);
 
     if (!products || products.length === 0) {
@@ -29,7 +29,7 @@ function ProductBox({ products }) {
                                         <h3 className='font-semibold py-1 px-1'>{product.name}</h3>
                                         <div className='flex justify-between px-1 items-center'>
                                             <p>Price</p>
-                                            <p>₹ <span className='font-semibold'>{product.price}/product</span></p>
+                                            <p>₹ <span className='font-semibold'>{product.price}/dress</span></p>
                                         </div>
                                     </div>
                                 </Link>
@@ -44,4 +44,4 @@ function ProductBox({ products }) {
     )
 }
 
-export default ProductBox
+export default DressBox

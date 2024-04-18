@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { getAllProduct } from '../../redux/product/product.action';
 
-import AddProductModal from './AddProductModal';
+import AddDressModal from './AddDressModal';
 
-import ProductTable from './ProductTable'
+import DressTable from './DressTable'
 
 
 
-function ProviderProducts() {
+function ProviderDresses() {
   const provider = useSelector((state) => state.provider.provider);
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getAllProduct(provider._id));
   }, [dispatch, provider._id]);
-  const [addProductModal, setAddProductModal] = useState(false);
+  const [addDressModal, setAddDressModal] = useState(false);
 
   return (
     <>
@@ -23,18 +23,18 @@ function ProviderProducts() {
         <div>
           <h1 className='font-semibold text-xl'>Manage Designs</h1>
         </div>
-        <button className='border bg-green-700 flex items-center gap-1 text-white px-2 py-1 rounded' onClick={() => setAddProductModal(true)}>
+        <button className='border bg-green-700 flex items-center gap-1 text-white px-2 py-1 rounded' onClick={() => setAddDressModal(true)}>
           <AiOutlinePlus />
           <span>Add Designs</span>
         </button>
       </div>
 
       <div className='py-3 px-3'>
-        <AddProductModal open={addProductModal} setOpen={setAddProductModal} />
-        <ProductTable addProductModal={addProductModal} setAddProductModal={setAddProductModal} />
+        <AddDressModal open={addDressModal} setOpen={setAddDressModal} />
+        <DressTable addDressModal={addDressModal} setAddDressModal={setAddDressModal} />
       </div>
     </>
   )
 }
 
-export default ProviderProducts
+export default ProviderDresses

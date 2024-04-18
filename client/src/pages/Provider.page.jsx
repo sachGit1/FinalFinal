@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import HomeLayout from '../layouts/Home.layout'
 
-import ProductBox from '../components/Product/ProductBox'
+import DressBox from '../components/Product/DressBox'
 
 import ProviderTopBar from '../components/ProviderTopBar'
 
@@ -65,7 +65,7 @@ function ProviderPage() {
             <TopNavigation breadcrumbs={breadcrumbs} />
           </div>
           <ProviderTopBar products={products} />
-          <ProductBox products={products} />
+          <DressBox products={products} />
           <Reviews />
         </div> : null
       }

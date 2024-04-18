@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link}  from 'react-router-dom'
-function ProductBox({products}) {
+function DressBox({products}) {
     if(products.length === 0){
         return(
             <div className='flex items-center justify-center h-32 w-full'>
@@ -24,7 +24,7 @@ function ProductBox({products}) {
                             <h3 className='font-semibold py-1 px-1'>{product.name}</h3>
                             <div className='flex justify-between px-1 items-center'>
                                 <p>Price</p>
-                                <p>₹ <span className='font-semibold'>{product.price}/product</span></p>
+                                <p>₹ <span className='font-semibold'>{product.price}/dress</span></p>
                             </div>
                         </div>
                     </Link>
@@ -37,4 +37,4 @@ function ProductBox({products}) {
   )
 }
 
-export default ProductBox
+export default DressBox

@@ -6,7 +6,7 @@ import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import AllProvidersPage from "./pages/AllProviders.page";
 import ProviderPage from "./pages/Provider.page";
-
+import DressPage from "./pages/Dress.page";
 
 
 import {
@@ -19,19 +19,14 @@ import ProviderLogin from "./pages/ProviderLogin";
 import ProviderDashboardPage from "./components/provider/ProviderDashboardPage";
 import ProviderOrders from "./components/provider/ProviderOrders";
 
-import ProviderProducts from "./components/provider/ProviderProducts";
+import ProviderDresses from "./components/provider/ProviderDresses";
 import OrdersPage from "./pages/Orders.page";
 import { getAllReview } from "./redux/review/review.action";
-import ProductPage from "./components/provider/ProductTable";
+
 
 import SizeGuide from "./components/SizeGuide";
-
 import Ourteamslider from "./components/Ourteamslider";
-
 import { Store } from "@reduxjs/toolkit";
-import AdminPanel from "./components/AdminPanel/AdminPanel";
-import AdminLogin from "./components/AdminPanel/AdminLogIn";
-
 import AboutUspage from "./pages/AboutUspage";
 
 
@@ -63,7 +58,7 @@ function App() {
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/provider" element={<AllProvidersPage />} />
-      <Route path="/product" element={<ProductPage/>}/>
+      <Route path="/product/:_id" element={<DressPage/>}/>
 
       
       <Route path="/orders" element={<OrdersPage />} />
@@ -72,7 +67,7 @@ function App() {
       <Route path="/registerProvider" element={<ProviderRegistration />} />
       <Route path="/loginProvider" element={<ProviderLogin />} />
       <Route path="/size" element={<SizeGuide/>}/>
-      <Route path="/admin" element ={<AdminLogin/>}/>
+
       <Route path="/team" element={<Ourteamslider/>}/>
       <Route path="/aboutus" element={<AboutUspage/>}/>
       
@@ -85,7 +80,7 @@ function App() {
         }
       >
         <Route path="orders" element={<ProviderOrders />} />
-        <Route path="products" element={<ProviderProducts />} />
+        <Route path="dresses" element={<ProviderDresses />} />
       </Route>
     </Routes>
   );

@@ -1,7 +1,7 @@
 {
-  "name": "tiffinwala",
+  "name": "tailorfithub",
   "version": "1.0.0",
-  "description": "Tiffin Server Application",
+  "description": "TailorFitHub Server Application",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "cron": "^2.1.0",
     "dotenv": "^16.4.5",
-    "express": "^4.18.2",
+    "express": "^4.19.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
     "mongoose": "^6.12.8",

@@ -5,15 +5,15 @@ import { useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
 import { Typography } from '@mui/material'
 
-import ProductDetail from '../components/Product/ProductDetail';
+import DressDetail from '../components/Product/DressDetail';
 
 
-import ProductSubscription from '../components/Product/ProductSubscription';
+import DressSubscription from '../components/Product/DressSubscription';
 import HomeLayout from '../layouts/Home.layout'
 import { getProductById } from '../redux/product/product.action'
 import TopNavigation from '../components/TopNavigation'
 
-function ProductPage() {
+function DressPage() {
   const params = useParams();
   const id = params._id
   const dispatch = useDispatch();
@@ -72,14 +72,14 @@ function ProductPage() {
       </div>
       <div className='md:flex lg:gap-8 gap-4 lg:px-16 md:px-6 px-2 pb-4'>
         <div className='md:w-1/2'>
-          <ProductDetail />
+          <DressDetail />
         </div>
         <div className='md:sticky top-0 z-10 md:mt-0 mt-20 bg-white md:w-1/2 py-4'>
-          <ProductSubscription />
+          <DressSubscription />
         </div>
       </div>
     </>
   )
 }
 
-export default HomeLayout(ProductPage)
+export default HomeLayout(DressPage)

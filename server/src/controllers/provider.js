@@ -35,7 +35,7 @@ exports.registerProvider = async(req,res) =>{
 
         // Disabled Email for authorization
 
-        // let subject = "Email Verification For Registration on Tiffin Wala "
+        // let subject = "Email Verification For Registration on Tailor Fit Hub "
         // let html = `<p>Hello <b>${data.name}</b>,</p>
         //             <p>Please verify your email Id by entering below verification code to verify your account, If this was not send by you plzz and don't share it with anyone
         //             <h3>Verification Code: ${data.code}</h3>`

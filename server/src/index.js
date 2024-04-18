@@ -57,7 +57,7 @@ const updateProduct = async() =>{
 }
 new CronJob('0 0 * * *', async () => {
     await updateProduct()
-  }, null, true, 'Asia/Colombo');
+  }, null, true, 'Asia/Kolkata');
 
 app.get('/',(req,res) =>{
     console.log("Server Is Running")

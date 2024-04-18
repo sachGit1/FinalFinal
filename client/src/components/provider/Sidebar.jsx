@@ -12,9 +12,9 @@ function Sidebar({open,setOpen}) {
       isActive: pathname.includes("orders")
     },
     {
-      name: "Products",
-      path:'products',
-      isActive: pathname.includes("products")
+      name: "Dresses",
+      path:'dresses',
+      isActive: pathname.includes("dresses")
     }
   ]
   const dispatch = useDispatch()

@@ -48,7 +48,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function AddProductModal({ open, setOpen }) {
+export default function AddDressModal({ open, setOpen }) {
   const [name, setName] = useState("")
   const [price, setPrice] = useState("")
   const [veg, setVeg] = useState("")
@@ -130,7 +130,7 @@ export default function AddProductModal({ open, setOpen }) {
             </div>
           </DialogContent>
           <DialogActions>
-            <input type="submit" value="Add Designs" autoFocus className="text-white cursor-pointer bg-slate-800 rounded px-2 py-1" />
+            <input type="submit" value="Add Dress" autoFocus className="text-white cursor-pointer bg-slate-800 rounded px-2 py-1" />
           </DialogActions>
         </form>
       </BootstrapDialog>
