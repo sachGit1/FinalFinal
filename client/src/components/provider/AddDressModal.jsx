@@ -116,8 +116,12 @@ export default function AddDressModal({ open, setOpen }) {
               <label htmlFor="type" className='font-semibold'>Type</label>
               <select name="type" required id="type" className='px-3 py-1 border rounded focus:outline-none' onChange={(e) => handleTypeChange(e.target.value)}>
                 <option value="">Select Type of Product</option>
-                <option value="veg">Veg</option>
-                <option value="nonVeg">Non-Veg</option>
+                <option value="veg">Frocks</option>
+                <option value="nonVeg">Skirts</option>
+                <option value="nonVeg">Crop Tops</option>
+                <option value="nonVeg">Blouses</option>
+                <option value="nonVeg">Kurtha</option>
+                <option value="nonVeg">Pants</option>
               </select>
             </div>
             <div className='flex flex-col gap-1'>
