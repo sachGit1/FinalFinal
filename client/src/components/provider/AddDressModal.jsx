@@ -109,15 +109,15 @@ export default function AddDressModal({ open, setOpen }) {
               <input type="Number" value={price} required name="price" id="price" placeholder="Enter Price of Product" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setPrice(e.target.value)} />
             </div>
             <div className='flex flex-col gap-1'>
-              <label htmlFor="price" className='font-semibold'>Enter Per Day Quantity</label>
+              <label htmlFor="price" className='font-semibold'>Enter Quantity</label>
               <input type="Number" value={quantity} required name="quantity" id="quantity" placeholder="Enter Quantity" className="px-3 py-1 border rounded focus:outline-none" onChange={(e) => setQuantity(e.target.value)} />
             </div>
             <div className='flex flex-col gap-1'>
               <label htmlFor="type" className='font-semibold'>Type</label>
               <select name="type" required id="type" className='px-3 py-1 border rounded focus:outline-none' onChange={(e) => handleTypeChange(e.target.value)}>
                 <option value="">Select Type of Product</option>
-                <option value="veg">Veg</option>
-                <option value="nonVeg">Non-Veg</option>
+                <option value="veg">Casual</option>
+                <option value="nonVeg">Party</option>
               </select>
             </div>
             <div className='flex flex-col gap-1'>

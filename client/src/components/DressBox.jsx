@@ -24,7 +24,7 @@ function DressBox({products}) {
                             <h3 className='font-semibold py-1 px-1'>{product.name}</h3>
                             <div className='flex justify-between px-1 items-center'>
                                 <p>Price</p>
-                                <p>₹ <span className='font-semibold'>{product.price}/dress</span></p>
+                                <p>Rs.  <span className='font-semibold'>{product.price}/dress</span></p>
                             </div>
                         </div>
                     </Link>

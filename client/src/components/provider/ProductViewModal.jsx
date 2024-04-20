@@ -75,11 +75,11 @@ export default function ProductViewModal(props) {
             </div>
             <div >
               <h2 className='font-semibold'>Product Price</h2>
-              <p className=''>₹{productDetails.price}</p>
+              <p className=''>Rs. {productDetails.price}</p>
             </div>
             <div>
               <h2 className='font-semibold'>Product Type</h2>
-              <p className=''>{`${productDetails.isVeg ? 'Veg' : 'Non-Veg'}`}</p>
+              <p className=''>{`${productDetails.isVeg ? 'Casual' : "Party"}`}</p>
             </div>
             <div className='col-span-2'>
               <h2 className='font-semibold'>Product Description</h2>

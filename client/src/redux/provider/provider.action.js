@@ -91,7 +91,7 @@ export const getProviderDetails = () => async (dispatch) => {
     dispatch(providerRequest());
     const providerData = await axios({
       method: "GET",
-      url: "http://localhost:4000/api/v1/provider/me",
+      url: "https://localhost:4000/api/v1/provider/me",
     });
     return dispatch(providerSuccess(providerData.data.provider));
   } catch (error) {

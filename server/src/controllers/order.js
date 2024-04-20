@@ -12,11 +12,11 @@ exports.addOrder = async(req,res) =>{
         const product = await productModel.findById(data.product)
         const quantity = product.quantity - data.quantity
         await productModel.findByIdAndUpdate(product._id,{$set:{quantity}})
-        const subject = "Ordered: Your Order is Successfull"
-        const message = `Hi ${req.user.name} \n Your Order for ${product.name} is Successfull \n Thank You`
-        const email = req.user.email
+        // const subject = "Ordered: Your Order is Successfull"
+        // const message = `Hi ${req.user.name} \n Your Order for ${product.name} is Successfull \n Thank You`
+        // const email = req.user.email
 
-        await sendEmail({email,subject,message});
+        // await sendEmail({email,subject,message});
         return res.status(200).json({order});
     } catch (error) {
         return res.status(500).json({message:error.message});

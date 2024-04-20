@@ -73,7 +73,7 @@ exports.getProviderDetails = async(req,res) =>{
             return res.status(404).json({message:"No Tailor Found"});
         return res.status(200).json({provider});
     } catch (error) {
-        return res.status(500).json({});
+        return res.status(500).json({message:error.message});
     }
 }
 exports.getAllProviders = async(req,res) =>{

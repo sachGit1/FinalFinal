@@ -180,9 +180,9 @@ export default function ProductPage() {
                   <StyledTableCell component="th" scope="row">
                     {product.name}
                   </StyledTableCell>
-                  <StyledTableCell align='center'>₹{product.price}</StyledTableCell>
+                  <StyledTableCell align='center'>Rs. {product.price}</StyledTableCell>
                   <StyledTableCell align='center'>{product.quantity}</StyledTableCell>
-                  <StyledTableCell align='center'>{`${product.isVeg ? 'Veg' : "Non-Veg"}`}</StyledTableCell>
+                  <StyledTableCell align='center'>{`${product.isVeg ? 'Casual' : "Party"}`}</StyledTableCell>
                   <StyledTableCell align='center'>
                     <img src={product.image} alt="" className='w-20 h-20' />
                   </StyledTableCell>
