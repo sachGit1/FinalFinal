@@ -64,7 +64,7 @@ function OrdersPage() {
                                 <p>Quantity : <span className='font-semibold'>{order?.quantity}</span></p>
                                 <p>Price : <span className='font-semibold'>Rs. {order?.totalAmount}</span></p>
                                 <p>OrderStatus: <span className='font-semibold'>{order?.orderStatus}</span></p>
-                                <p>{order?.product}</p>
+                                {/* <p>{order?.product}</p> */}
                                 <div className='flex gap-2 justify-between'>
                                 <p>OrderedDate: <span className='font-semibold'>{order?.date}</span></p>
                                 <div>
