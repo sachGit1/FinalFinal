@@ -43,7 +43,7 @@ exports.getProvidersOrders = async(req,res) =>{
         if(!provider)
             return res.status(400).json({message:"Please Login to fetch orders"});
         
-        const orders = await orderModel.find({provider}).populate("user products").sort({createdAt:-1})
+        const orders = await orderModel.find({provider}).populate({path: 'user',select: 'name'}).populate({path: 'product',select: 'name'}).sort({createdAt:-1})
 
         if(!orders)
             return res.status(404).json({message:"No orders Found"});

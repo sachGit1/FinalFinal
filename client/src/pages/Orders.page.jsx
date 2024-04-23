@@ -56,9 +56,7 @@ function OrdersPage() {
                 {orders.map((order, idx) => (
                     <div className='md:flex gap-2 border-b py-2' key={idx}>
                         <div className='w-32 h-28 overflow-hidden'>
-                            <img src={order?.product?.image} alt="img" />
-                            
-                            
+                            <img src={order?.product} alt="img" />
                         </div>
                         <div className='flex justify-between items-center'>
                             <div>
@@ -66,7 +64,7 @@ function OrdersPage() {
                                 <p>Quantity : <span className='font-semibold'>{order?.quantity}</span></p>
                                 <p>Price : <span className='font-semibold'>Rs. {order?.totalAmount}</span></p>
                                 <p>OrderStatus: <span className='font-semibold'>{order?.orderStatus}</span></p>
-                                {/* <p>{order?.product}</p> */}
+                                <p>{order?.product}</p>
                                 <div className='flex gap-2 justify-between'>
                                 <p>OrderedDate: <span className='font-semibold'>{order?.date}</span></p>
                                 <div>
