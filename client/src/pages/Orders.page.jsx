@@ -15,7 +15,9 @@ function OrdersPage() {
     const [activeOrder, setActiveOrder] = useState("")
     let data = ""
 
-    if (orders || orders?.length === 0) {
+    
+
+    if (!orders || (orders && orders.length === 0)) {
         data = <p className='text-gray-600 flex items-center justify-center' style={{ height: '50vh' }}>No Orders Found</p>
     }
     const handleReviewModal = (order) => {
@@ -44,6 +46,7 @@ function OrdersPage() {
     const handleCancel = (order) => {
         dispatch(updateUserOrder({ _id: order._id, status: "Cancelled", user: order.user, provider: order.provider, product: order.product, quantity: order.quantity }))
     }
+    
     return (
         <div className='md:px-8 px-1 py-4'>
             <ReviewModal open={reviewModal} setOpen={setReviewModal} order={activeOrder} />
@@ -53,19 +56,20 @@ function OrdersPage() {
                 {orders.map((order, idx) => (
                     <div className='md:flex gap-2 border-b py-2' key={idx}>
                         <div className='w-32 h-28 overflow-hidden'>
-                            <img src={order?.product?.image} alt="" />
+                            <img src={order?.product} alt="img" />
                         </div>
                         <div className='flex justify-between items-center'>
                             <div>
                                 <p>Name: <span className='font-semibold'>{order?.product?.name}</span></p>
                                 <p>Quantity : <span className='font-semibold'>{order?.quantity}</span></p>
-                                <p>Price : <span className='font-semibold'>₹{order?.totalAmount}</span></p>
+                                <p>Price : <span className='font-semibold'>Rs. {order?.totalAmount}</span></p>
                                 <p>OrderStatus: <span className='font-semibold'>{order?.orderStatus}</span></p>
+                                {/* <p>{order?.product}</p> */}
                                 <div className='flex gap-2 justify-between'>
-                                    <p>OrderedDate: <span className='font-semibold'>{order?.date}</span></p>
-                                    <div>
-                                        {order?.orderStatus === "Ordered" && <button className='bg-red-500 text-white px-2 py-1 rounded ' onClick={() => handleCancel(order)}>Cancel Order</button>}
-                                    </div>
+                                <p>OrderedDate: <span className='font-semibold'>{order?.date}</span></p>
+                                <div>
+                                    {order?.orderStatus === "Ordered" && <button className='bg-red-500 text-white px-2 py-1 rounded ' onClick={() => handleCancel(order)}>Cancel Order</button>}
+                                </div>
                                 </div>
                                 {order?.orderStatus === "Delivered" && <button className="cursor-pointer text-blue-800 hover:underline" onClick={() => handleReviewModal(order)}>Write a Review</button>}
                             </div>
