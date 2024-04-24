@@ -150,8 +150,8 @@ export default function OrderTable() {
                 <StyledTableCell align='center'>Product Name</StyledTableCell>
                 <StyledTableCell align='center'>Quantity</StyledTableCell>
                 <StyledTableCell align='center'>TotalPrice</StyledTableCell>
-                <StyledTableCell align='center'>Address</StyledTableCell>
                 <StyledTableCell align='center'>Measurements</StyledTableCell>
+                
                 <StyledTableCell align='center'>PaymentStatus</StyledTableCell>
                 <StyledTableCell align='center'>OrderStatus</StyledTableCell>
               </TableRow>
@@ -171,7 +171,7 @@ export default function OrderTable() {
                   <StyledTableCell align='center'>{order?.quantity}</StyledTableCell>
                   <StyledTableCell align='center'>Rs. {order?.totalAmount}</StyledTableCell>
                   <StyledTableCell align='center'>{order?.address}</StyledTableCell>
-                  <StyledTableCell align='center'>{order?.meas}</StyledTableCell>
+                  
                   <StyledTableCell align='center'>{order?.paymentStatus}</StyledTableCell>
                   <StyledTableCell align='center'>
                     <div className='flex items-center gap-2'>
