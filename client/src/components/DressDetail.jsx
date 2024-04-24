@@ -6,7 +6,7 @@ function DressDetail() {
   return (
     <>
       {dressData && <div className='pb-4'>
-        <div className='dressImage' style={{height:'380px'}}>
+        <div className='dressImage' style={{height:'200px'}}>
           <img src={dressData.image} alt={dressData.name} className='h-full w-full rounded-lg overflow-hidden'/>
         </div>
           <div className= 'flex flex-col gap-4 py-4 h-40'>

@@ -8,7 +8,7 @@ function DressDetail() {
   return (
     <>
       {dressData && <div className='pb-4'>
-        <div className='dressImage' style={{ height: '380px' }}>
+        <div className='dressImage' style={{ height: '700px', width:'500px' }}>
           {loading && <Skeleton />}
           <img src={dressData.image} alt={dressData.name} className={`${loading ? 'hidden' : 'block'} h-full w-full rounded-lg overflow-hidden`} onLoad={() => setLoading(false)} />
         </div>
@@ -19,6 +19,7 @@ function DressDetail() {
           <h6 className='font-medium'>Description :</h6>
           <p className='text-gray-500'>{dressData.description}</p>
         </div>
+        <br/>
       </div>}
     </>
   )

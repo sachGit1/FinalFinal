@@ -10,7 +10,7 @@ function HeroSlider() {
   const slidesData = [
     {
       title: "Experience personalized perfection",
-      img: "https://media.istockphoto.com/id/1803474994/photo/young-african-american-female-clothing-designer-working-inside-office.jpg?s=2048x2048&w=is&k=20&c=rwHPIBTrmaY-GxQbay2KK9zJUmKyQc60kTtU0zc-zyY="
+      img: "https://i.postimg.cc/15bB3WRb/happy-tailor-1-slider.jpg"
     },
 
     {
@@ -22,13 +22,13 @@ function HeroSlider() {
       img: "https://media.istockphoto.com/id/625470308/photo/clothes-in-a-fancy-shop.jpg?s=2048x2048&w=is&k=20&c=spWwW_VvabW5ZUo-HnO9QYtjeAyxbU57zB6bOqv0s8U="
     },
     {
-      title: "Empower Sri Lankan tailor's crafting magic. Join our online tailoring revolution today!",
+      title: "Join our online tailoring revolution today!",
       img: "https://media.istockphoto.com/id/923796498/photo/shot-of-a-sunny-fashion-design-studio-we-see-working-personal-computer-hanging-clothes-sewing.jpg?s=2048x2048&w=is&k=20&c=naa9Zqk-YtDPbgPTZBAc3lWmj7Ya283yYIFU2jRuU5Q="
     
     },
   ]
   return (
-    <div className='px-2 py-2' style={{ fontFamily: 'Candara, sans-serif' , fontWeight: 'Thin' }}>
+    <div className='px-2 py-2' style={{ fontFamily: 'Candara, sans-serif' , fontWeight: 'bold' }}>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

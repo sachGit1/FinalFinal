@@ -13,6 +13,7 @@ function DressSubscription() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [meas, setMeas] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [date, setDate] = useState("");
@@ -46,6 +47,7 @@ function DressSubscription() {
       provider: product.provider,
       quantity,
       address,
+      meas,
       time,
       date,
       totalAmount
@@ -54,7 +56,7 @@ function DressSubscription() {
       "key": 'rzp_test_yu67T9aDVZ2U2O',
       "amount": Number(totalAmount) * 100,
       "currency": "INR",
-      "name": "TFH",
+      "name": "Tailor Fit Hub",
       "description": "Test Transaction",
       "image": "https://i.postimg.cc/SQLL3CkQ/guide.jpg",
       "handler": function (response) {
@@ -122,12 +124,19 @@ function DressSubscription() {
           </div>
         </div>
         <div>
-          <label htmlFor="time" className='font-semibold'>Time</label>
-          <div className='flex items-center border bg-white w-full'>
+          <label htmlFor="time" className='font-semibold' style={{display:'none'}}>Time</label>
+          <div className='flex items-center border bg-white w-full' style={{display:'none'}}>
             <span className='px-2 h-full'><FiClock /></span>
-            <input type="time" value={time} name="phone" placeholder='Select Time to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="time" required onChange={(e) => setTime(e.target.value)} />
+            <input type="time" value={time} name="phone" placeholder='Select Time to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="time" onChange={(e) => setTime(e.target.value)} />
           </div>
         </div>
+
+        <div className=''>
+          <label htmlFor="meas" className='font-semibold'>Measurements</label>
+          <textarea type="time" value={meas} name="meas" rows={4} placeholder='Enter Required Measurements' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="meas" required onChange={(e) => setMeas(e.target.value)} />
+        </div>
+        <div></div>
+
         <div className=''>
           <label htmlFor="address" className='font-semibold'>Address</label>
           <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />

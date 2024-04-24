@@ -13,6 +13,7 @@ function DressSubscription() {
   const [name,setName] = useState();
   const [email,setEmail] = useState();
   const [address,setAddress] = useState();
+  const [meas, setMeas] = useState("");
   const [mobileNumber, setMobileNumber] = useState();
   const [quantity,setQuantity] = useState(1);
   const [date,setDate] = useState("");
@@ -116,14 +117,14 @@ function DressSubscription() {
             <label htmlFor="date" className='font-semibold'>Date</label>
             <div className='flex items-center border bg-white w-full'>
               <span className='px-2 h-full'><MdDateRange /></span>
-              <input type="date" value={date} name="phone" placeholder='Select Date to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="date" required onChange={(e) => setDate(e.target.value)}/>
+              <input type="date" value={date} name="phone" placeholder='Select Date to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="date"  required onChange={(e) => setDate(e.target.value)}/>
             </div>
           </div>
           <div>
             <label htmlFor="time" className='font-semibold'>Time</label>
             <div className='flex items-center border bg-white w-full'>
               <span className='px-2 h-full'><FiClock /></span>
-              <input type="time" value={time} name="phone" placeholder='Select Time to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="time" required onChange={(e) => setTime(e.target.value)}/>
+              <input type="time" value={time} name="phone" placeholder='Select Time to deliver' className='w-full h-full px-2 py-2 border-l focus:outline-none' id="time" onChange={(e) => setTime(e.target.value)}/>
             </div>
           </div>
           <div className=''>

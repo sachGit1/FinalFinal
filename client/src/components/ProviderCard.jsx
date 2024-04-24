@@ -13,8 +13,8 @@ function ProviderCard({ providerLogo, name, address, rating, id }) {
   const [loading, setLoading] = useState(true)
   return (
     <>
-      <Link to={`/provider/${id}`} className='flex flex-col p-2 border border-gray-300  hover:shadow-lg rounded-lg transition duration-300 ease-in gap-3'>
-        <div className='w-full h-44'>
+      <Link to={`/provider/${id}`} className='flex flex-col p-2 border border-gray-300  hover:shadow-lg rounded-lg transition duration-300 ease-in gap-3' style={{backgroundColor:'#95B9C7'}}>
+        <div className='w-full h-45'>
           {loading && <Skeleton />}
           <img src={providerLogo} onLoad={() => setLoading(false)} alt="name" className={`${loading ? 'hidden' : 'block'} w-full h-full`} />
         </div>

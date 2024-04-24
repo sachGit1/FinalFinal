@@ -67,12 +67,12 @@ function SignUpPage() {
   };
   return (
     <div>
-      <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center'>
+      <div className='py-2 sm:px-8 px-2 shadow flex justify-between items-center' style={{backgroundColor:'#03254c'}}>
         <Link to="/" className='flex items-center'>
-          <img src="https://i.postimg.cc/GhtrVGrW/logo1.png" style={{width:'220px', height:'100px', marginTop:'-10px', marginBottom:'-10px'}} className='h-8 object-contain' alt="" />
+          <img src="https://i.postimg.cc/9fQC9hyz/tfhLogo.png" style={{width:'220px', height:'100px', marginTop:'-10px', marginBottom:'-10px'}} className='h-8 object-contain' alt="" />
           
         </Link>
-        <Link to="/" className='flex items-center gap-2'>
+        <Link to="/" className='flex items-center gap-2' style={{color:'white'}}>
           <BiArrowBack />
           <span>Back to home</span>
         </Link>
