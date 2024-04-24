@@ -131,15 +131,15 @@ function DressSubscription() {
           </div>
         </div>
 
-        <div className=''>
-          <label htmlFor="meas" className='font-semibold'>Measurements</label>
-          <textarea type="time" value={meas} name="meas" rows={4} placeholder='Enter Required Measurements' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="meas" required onChange={(e) => setMeas(e.target.value)} />
+        <div className='' style={{display:'none'}}>
+          <label htmlFor="meas" className='font-semibold' style={{display:'none'}}>Measurements</label>
+          <textarea type="time" value={meas} style={{display:'none'}} name="meas" rows={4} placeholder='Enter Required Measurements' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="meas"  onChange={(e) => setMeas(e.target.value)} />
         </div>
         <div></div>
 
         <div className=''>
-          <label htmlFor="address" className='font-semibold'>Address</label>
-          <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
+          <label htmlFor="address" className='font-semibold'>Measurements</label>
+          <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Required Measurements in the description' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
         </div>
         <div>
           <input type="submit" value="Order Dress" className='bg-slate-900 text-white rounded px-3 py-2 cursor-pointer w-full' />
