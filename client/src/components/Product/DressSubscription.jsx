@@ -129,7 +129,7 @@ function DressSubscription() {
           </div>
         </div>
         <div className=''>
-          <label htmlFor="address" className='font-semibold'>Address</label>
+          <label htmlFor="address" className='font-semibold'>Required Measurements</label>
           <textarea type="time" value={address} name="address" rows={4} placeholder='Enter Your Address' className='w-full h-full px-2 py-2 my-2 border focus:outline-none' id="address" required onChange={(e) => setAddress(e.target.value)} />
         </div>
         <div>
