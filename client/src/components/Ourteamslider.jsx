@@ -16,7 +16,7 @@ const Ourteamslider=()=>{
  return (
     <>
   
-    <div className=" my-5">
+    <div className=" my-5" style={{backgroundColor:'#AFDCEC', padding:'40px'}}>
      <h3 className="text-center text-3xl py-5" style={{fontFamily:"cursive"}}>Our Team</h3>
       
      <Swiper spaceBetween={30}
@@ -31,26 +31,26 @@ const Ourteamslider=()=>{
         className="mySwiper" >
         <SwiperSlide>
             <div className=" flex flex-col items-center text-center">
-                <img src="https://i.postimg.cc/pV6DG8mS/g3.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
+                <img src="https://i.postimg.cc/52xq9ZJs/1111.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
                 <h4 className="mt-2 text-xl font-medium">Sachini Nawodya</h4>
-                 <p >Developer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
+                 
+                 <p className="px-14">PS/2019/097</p>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className=" flex flex-col items-center text-center">
-                <img src="https://i.postimg.cc/9fQt0jz4/g2.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
+                <img src="https://i.postimg.cc/vB7dzF6J/Whats-App-Image-2024-04-23-at-16-16-06.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
                 <h4 className="mt-2 text-xl font-medium">Hiumi Dayarathne</h4>
-                 <p >Developer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
+                 
+                 <p className="px-14">PS/2019/085</p>
             </div>
         </SwiperSlide>
         <SwiperSlide>
             <div className=" flex flex-col items-center text-center">
-                <img src="https://i.postimg.cc/m23QSrHz/g1.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
-                <h4 className="mt-2 text-xl font-medium">Naushi</h4>
-                 <p >Designer</p>
-                 <p className="px-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur voluptatibus consequatur veritatis harum sunt sapiente! Ratione quae, officiis adipisci dolorem mollitia nihil at voluptatibus.</p>
+                <img src="https://i.postimg.cc/7ZvdBPgf/Whats-App-Image-2024-04-23-at-16-29-08.jpg" alt="teammember img" style={{width:"11.4rem",borderRadius:"20%"}}/>
+                <h4 className="mt-2 text-xl font-medium">Naushika Lakshani</h4>
+                 
+                 <p className="px-14">PS/2019/119</p>
             </div>
         </SwiperSlide>
         
